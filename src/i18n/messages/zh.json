@@ -106,8 +106,18 @@
   "submit": {
     "title": "入驻工厂",
     "subtitle": "提交您的工厂信息以在ChinaProHub上展示。完全免费。",
-    "comingSoon": "工厂提交表单即将上线。请联系我们：",
-    "toGetListed": "以获取入驻。"
+    "companyName": "公司/工厂名称 *",
+    "contactName": "联系人",
+    "contactEmail": "邮箱 *",
+    "contactPhone": "电话 / WhatsApp",
+    "products": "主要产品（多个用逗号分隔）*",
+    "region": "省份/地区",
+    "message": "备注",
+    "submitButton": "提交申请",
+    "success": "感谢您的提交！我们将在24小时内审核。",
+    "error": "提交失败，请重试或直接发邮件联系我们。",
+    "required": "带 * 的为必填项",
+    "privacyNote": "您的联系信息仅用于验证，不会公开展示。"
   },
   "about": {
     "title": "关于ChinaProHub",

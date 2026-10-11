@@ -106,8 +106,18 @@
   "submit": {
     "title": "Inscrire votre usine",
     "subtitle": "Soumettez les informations de votre usine pour être répertorié sur ChinaProHub. C'est gratuit.",
-    "comingSoon": "Le formulaire d'inscription arrive bientôt. Contactez-nous à",
-    "toGetListed": "pour être inscrit."
+    "companyName": "Nom de l'entreprise / usine *",
+    "contactName": "Personne de contact",
+    "contactEmail": "E-mail *",
+    "contactPhone": "Téléphone / WhatsApp",
+    "products": "Produits principaux (séparez les multiples par des virgules) *",
+    "region": "Province / Région",
+    "message": "Notes supplémentaires",
+    "submitButton": "Soumettre la demande",
+    "success": "Merci ! Votre soumission a été reçue. Nous l'examinerons dans les 24 heures.",
+    "error": "Échec de la soumission. Veuillez réessayer ou nous envoyer un e-mail directement.",
+    "required": "Les champs obligatoires sont marqués d'un *",
+    "privacyNote": "Vos coordonnées sont utilisées uniquement pour vérification et ne seront pas affichées publiquement."
   },
   "about": {
     "title": "À propos de ChinaProHub",

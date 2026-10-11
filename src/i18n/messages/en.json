@@ -106,8 +106,18 @@
   "submit": {
     "title": "List Your Factory",
     "subtitle": "Submit your factory information to be listed on ChinaProHub. It's free.",
-    "comingSoon": "Factory submission form coming soon. Contact us at",
-    "toGetListed": "to get listed."
+    "companyName": "Company / Factory Name *",
+    "contactName": "Contact Person",
+    "contactEmail": "Email *",
+    "contactPhone": "Phone / WhatsApp",
+    "products": "Main Products (separate multiple with commas) *",
+    "region": "Province / Region",
+    "message": "Additional Notes",
+    "submitButton": "Submit Application",
+    "success": "Thank you! Your submission has been received. We will review it within 24 hours.",
+    "error": "Submission failed. Please try again or email us directly.",
+    "required": "Required fields are marked with *",
+    "privacyNote": "Your contact information is used for verification only and will not be displayed publicly."
   },
   "about": {
     "title": "About ChinaProHub",

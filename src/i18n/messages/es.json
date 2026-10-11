@@ -106,8 +106,18 @@
   "submit": {
     "title": "Registrar su fábrica",
     "subtitle": "Envíe la información de su fábrica para ser listado en ChinaProHub. Es gratis.",
-    "comingSoon": "El formulario de registro estará disponible pronto. Contáctenos en",
-    "toGetListed": "para ser listado."
+    "companyName": "Nombre de la empresa / fábrica *",
+    "contactName": "Persona de contacto",
+    "contactEmail": "Correo electrónico *",
+    "contactPhone": "Teléfono / WhatsApp",
+    "products": "Productos principales (separe múltiples con comas) *",
+    "region": "Provincia / Región",
+    "message": "Notas adicionales",
+    "submitButton": "Enviar solicitud",
+    "success": "¡Gracias! Su envío ha sido recibido. Lo revisaremos en 24 horas.",
+    "error": "Error en el envío. Inténtelo de nuevo o envíenos un correo directamente.",
+    "required": "Los campos obligatorios están marcados con *",
+    "privacyNote": "Su información de contacto se utiliza solo para verificación y no se mostrará públicamente."
   },
   "about": {
     "title": "Acerca de ChinaProHub",
