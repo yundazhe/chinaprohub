@@ -13,6 +13,8 @@ export type FieldDef = {
   type?: string;
   // 提供时表单渲染下拉选择（如 regions.type 枚举）。
   options?: string[];
+  // "checkbox" 时表单渲染复选框（提交值 "on"/缺省；由 serialize 转 boolean）。
+  kind?: "checkbox";
   // 提交时对该列原始字符串值做转换（如逗号分隔标签 → 数组）。
   serialize?: (raw: string) => unknown;
 };
@@ -62,7 +64,11 @@ export function makeSaveHandler(def: EntityDef) {
     // 应用 baseFields 的 serialize（如逗号分隔 → 数组）；未定义 serialize 的列保持原始字符串。
     const patch: Record<string, unknown> = { ...values, translation_locks: mergedLocks };
     for (const f of def.baseFields) {
-      if (f.serialize && Object.prototype.hasOwnProperty.call(values, f.col)) {
+      if (!f.serialize) continue;
+      if (f.kind === "checkbox") {
+        // 未勾选的 checkbox 根本不出现在 FormData 中 → 按空串处理，serialize 负责 "on"→true／缺省→false。
+        patch[f.col] = f.serialize(values[f.col] ?? "");
+      } else if (Object.prototype.hasOwnProperty.call(values, f.col)) {
         patch[f.col] = f.serialize(values[f.col]);
       }
     }

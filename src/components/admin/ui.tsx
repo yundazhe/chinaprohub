@@ -1,3 +1,5 @@
+export type Choice = { value: string; label: string };
+
 export function Field({
   label,
   name,
@@ -6,6 +8,9 @@ export function Field({
   required,
   type = "text",
   options,
+  checkbox,
+  checked,
+  choices,
 }: {
   label: string;
   name: string;
@@ -14,6 +19,12 @@ export function Field({
   required?: boolean;
   type?: string;
   options?: string[];
+  // kind:"checkbox" 字段 → 复选框（提交值 "on"/缺省，由 def.serialize 转 boolean）。
+  checkbox?: boolean;
+  // 编辑页回填：row[col] 为 true 时默认勾选。
+  checked?: boolean;
+  // 动态下拉选项（外键 id→名称，服务端按请求查询后经 EntityForm.selectOptions 传入）。
+  choices?: Choice[];
 }) {
   const cls = "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary-500";
   return (
@@ -22,7 +33,18 @@ export function Field({
         {label}
         {required && <em className="not-italic text-red-500"> *</em>}
       </span>
-      {options ? (
+      {checkbox ? (
+        <input type="checkbox" name={name} value="on" defaultChecked={checked} className="h-4 w-4 rounded border-slate-300" />
+      ) : choices ? (
+        <select name={name} defaultValue={defaultValue || undefined} className={cls} required={required}>
+          {!required && <option value="">未指定</option>}
+          {choices.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+      ) : options ? (
         <select name={name} defaultValue={defaultValue || undefined} className={cls} required={required}>
           {!required && <option value="">请选择</option>}
           {options.map((o) => (

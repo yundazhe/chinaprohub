@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useTransition, useState } from "react";
 import { Field, Alert } from "./ui";
+import type { Choice } from "./ui";
 // 仅类型导入（编译期擦除），避免把 crud-factory 的服务端依赖带入 client bundle。
 import type { EntityDef } from "@/lib/crud-factory";
 
@@ -11,10 +12,14 @@ export default function EntityForm({
   def,
   row,
   action,
+  selectOptions,
 }: {
   def: EntityDef;
   row?: Record<string, unknown>;
   action: (fd: FormData) => Promise<{ ok?: boolean; err?: string }>;
+  // 外键列（category_id/region_id/enterprise_id）的动态下拉选项：
+  // 由各 new/edit 页面服务端查询后按列名注入（FieldDef.options 仅用于静态枚举）。
+  selectOptions?: Record<string, Choice[]>;
 }) {
   const router = useRouter();
   const [result, setResult] = useState<{ ok?: boolean; err?: string } | null>(null);
@@ -68,6 +73,9 @@ export default function EntityForm({
           textarea={f.textarea}
           required={f.required}
           options={f.options}
+          checkbox={f.kind === "checkbox"}
+          checked={row?.[f.col] === true}
+          choices={selectOptions?.[f.col]}
           defaultValue={valueOf(f.col)}
         />
       ))}

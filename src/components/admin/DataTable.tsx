@@ -7,11 +7,17 @@ export default function DataTable({
   cols,
   hrefBase,
   deleteAction,
+  deleteConfirm,
+  extraActions,
 }: {
   rows: Record<string, unknown>[];
   cols: { key: string; label: string; render?: (row: Record<string, unknown>) => ReactNode }[];
   hrefBase: string;
   deleteAction: (id: string) => Promise<{ err?: string }>;
+  // 自定义删除确认文案（服务端列表页按行生成，如含级联产品数）。
+  deleteConfirm?: (row: Record<string, unknown>) => string;
+  // 操作列中编辑/删除之外附加的行内按钮（如企业 上架/下架、补翻译），由页面传入 client 组件。
+  extraActions?: (row: Record<string, unknown>) => ReactNode;
 }) {
   return (
     <div className="overflow-x-auto rounded-lg border bg-white">
@@ -38,7 +44,8 @@ export default function DataTable({
                 <Link className="text-primary-600 hover:underline" href={`${hrefBase}/${r.id}/edit`}>
                   编辑
                 </Link>
-                <DeleteButton id={String(r.id)} action={deleteAction} />
+                {extraActions?.(r)}
+                <DeleteButton id={String(r.id)} action={deleteAction} confirmText={deleteConfirm?.(r)} />
               </td>
             </tr>
           ))}
