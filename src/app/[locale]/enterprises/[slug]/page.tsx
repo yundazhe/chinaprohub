@@ -35,7 +35,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EnterpriseDetailPage({ params }: Props) {
   const enterprise = await dataService.getEnterpriseBySlug(params.slug);
-  if (!enterprise) notFound();
+  if (!enterprise) {
+    return (
+      <div className="py-12 sm:py-16">
+        <div className="container-custom text-center">
+          <h1 className="text-2xl font-bold text-slate-900">Enterprise Not Found</h1>
+          <p className="mt-4 text-slate-600">The enterprise you're looking for doesn't exist.</p>
+          <Link href="/enterprises" className="btn-primary mt-6 inline-block">
+            Back to Enterprises
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const [category, region, relatedEnterprises] = await Promise.all([
     enterprise.category_id
