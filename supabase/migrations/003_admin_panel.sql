@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS admin_settings (
   value JSONB NOT NULL,
   updated_at TIMESTAMPTZ DEFAULT now()
 );
--- 故意不建任何 RLS policy：anon/authenticated 均不可访问，仅服务端 Secret Key 可达
+ALTER TABLE admin_settings ENABLE ROW LEVEL SECURITY;
+-- 启用 RLS 且不建任何 policy：anon/authenticated 均不可访问，仅服务端 Secret Key（service role）可达
 
 CREATE INDEX IF NOT EXISTS idx_enterprises_owner ON enterprises(owner_user_id);
 CREATE INDEX IF NOT EXISTS idx_enterprises_status ON enterprises(status);
