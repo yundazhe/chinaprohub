@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import {
   ArrowLeft,
@@ -17,32 +16,39 @@ import { dataService } from "@/lib/data";
 import CertificationBadge from "@/components/ui/CertificationBadge";
 import EnterpriseCard from "@/components/ui/EnterpriseCard";
 import JsonLd from "@/components/seo/JsonLd";
+import { getTranslations } from "next-intl/server";
+import { getLocalizedName } from "@/lib/locale-fields";
 
 export const revalidate = 3600;
 
 interface Props {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const enterprise = await dataService.getEnterpriseBySlug(params.slug);
   if (!enterprise) return { title: "Enterprise Not Found" };
+  const name = params.locale === "zh" ? enterprise.name_zh : enterprise.name_en;
+  const description = params.locale === "zh" ? enterprise.description_zh : enterprise.description_en;
   return {
-    title: enterprise.name_en,
-    description: enterprise.description_en || `${enterprise.name_en} — Chinese factory directory`,
+    title: name,
+    description: description || `${name} — Chinese factory directory`,
   };
 }
 
 export default async function EnterpriseDetailPage({ params }: Props) {
+  const { locale } = params;
+  const te = await getTranslations("enterprises");
+
   const enterprise = await dataService.getEnterpriseBySlug(params.slug);
   if (!enterprise) {
     return (
       <div className="py-12 sm:py-16">
         <div className="container-custom text-center">
           <h1 className="text-2xl font-bold text-slate-900">Enterprise Not Found</h1>
-          <p className="mt-4 text-slate-600">The enterprise you're looking for doesn't exist.</p>
+          <p className="mt-4 text-slate-600">The enterprise you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/enterprises" className="btn-primary mt-6 inline-block">
-            Back to Enterprises
+            {te("allEnterprises")}
           </Link>
         </div>
       </div>
@@ -63,10 +69,14 @@ export default async function EnterpriseDetailPage({ params }: Props) {
       : Promise.resolve([]),
   ]);
 
+  const name = locale === "zh" ? enterprise.name_zh : enterprise.name_en;
+  const subtitle = locale === "zh" ? enterprise.name_en : enterprise.name_zh;
+  const description = locale === "zh" ? enterprise.description_zh : enterprise.description_en;
+
   const verificationLabel = {
-    unverified: "Unverified",
-    verified: "Verified",
-    premium: "Premium Verified",
+    unverified: te("unverified"),
+    verified: te("verified"),
+    premium: te("premium"),
   }[enterprise.verification_status];
 
   const verificationColor = {
@@ -83,7 +93,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
     description: enterprise.description_en,
     address: {
       "@type": "PostalAddress",
-      addressRegion: region?.name_en,
+      addressRegion: region ? getLocalizedName(region, locale) : undefined,
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -103,7 +113,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
             className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-primary-600"
           >
             <ArrowLeft className="h-4 w-4" />
-            All Enterprises
+            {te("allEnterprises")}
           </Link>
           {category && (
             <>
@@ -112,7 +122,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                 href={`/categories/${category.slug}`}
                 className="text-sm text-slate-500 hover:text-primary-600"
               >
-                {category.name_en}
+                {getLocalizedName(category, locale)}
               </Link>
             </>
           )}
@@ -126,18 +136,18 @@ export default async function EnterpriseDetailPage({ params }: Props) {
               <div className="flex items-start justify-between">
                 <div>
                   <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-                    {enterprise.name_en}
+                    {name}
                   </h1>
-                  <p className="mt-1 text-lg text-slate-500">{enterprise.name_zh}</p>
+                  <p className="mt-1 text-lg text-slate-500">{subtitle}</p>
                 </div>
                 <span className={`rounded-full px-3 py-1 text-sm font-medium ${verificationColor}`}>
                   {verificationLabel}
                 </span>
               </div>
 
-              {enterprise.description_en && (
+              {description && (
                 <p className="mt-4 text-slate-600 leading-relaxed">
-                  {enterprise.description_en}
+                  {description}
                 </p>
               )}
 
@@ -146,25 +156,25 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                 {enterprise.established_year && (
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <Calendar className="h-4 w-4 text-slate-400" />
-                    <span>Est. {enterprise.established_year}</span>
+                    <span>{te("est")} {enterprise.established_year}</span>
                   </div>
                 )}
                 {enterprise.employee_range && (
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <Users className="h-4 w-4 text-slate-400" />
-                    <span>{enterprise.employee_range} employees</span>
+                    <span>{enterprise.employee_range} {te("employees")}</span>
                   </div>
                 )}
                 {enterprise.factory_area_sqm && (
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <Ruler className="h-4 w-4 text-slate-400" />
-                    <span>{enterprise.factory_area_sqm.toLocaleString()} sqm factory</span>
+                    <span>{enterprise.factory_area_sqm.toLocaleString()} {te("factory")}</span>
                   </div>
                 )}
                 {enterprise.moq_text && (
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <Package className="h-4 w-4 text-slate-400" />
-                    <span>MOQ: {enterprise.moq_text}</span>
+                    <span>{te("moq")}: {enterprise.moq_text}</span>
                   </div>
                 )}
               </div>
@@ -172,7 +182,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
               {/* Certifications */}
               {enterprise.certifications.length > 0 && (
                 <div className="mt-6">
-                  <h3 className="mb-2 text-sm font-semibold text-slate-700">Certifications</h3>
+                  <h3 className="mb-2 text-sm font-semibold text-slate-700">{te("certifications")}</h3>
                   <div className="flex flex-wrap gap-2">
                     {enterprise.certifications.map((cert) => (
                       <CertificationBadge key={cert} certification={cert} />
@@ -184,7 +194,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
               {/* Export Markets */}
               {enterprise.export_markets.length > 0 && (
                 <div className="mt-6">
-                  <h3 className="mb-2 text-sm font-semibold text-slate-700">Export Markets</h3>
+                  <h3 className="mb-2 text-sm font-semibold text-slate-700">{te("exportMarkets")}</h3>
                   <div className="flex flex-wrap gap-2">
                     {enterprise.export_markets.map((market) => (
                       <span
@@ -203,7 +213,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                 <div className="mt-4">
                   <span className="inline-flex items-center gap-1 rounded-lg bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700">
                     <CheckCircle className="h-4 w-4" />
-                    Supports OEM/ODM
+                    {te("supportsOem")}
                   </span>
                 </div>
               )}
@@ -213,7 +223,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
           {/* Sidebar — Contact Info */}
           <div>
             <div className="card p-6">
-              <h3 className="mb-4 text-lg font-semibold text-slate-900">Contact This Factory</h3>
+              <h3 className="mb-4 text-lg font-semibold text-slate-900">{te("contactFactory")}</h3>
 
               <div className="space-y-3">
                 {enterprise.contact_whatsapp && (
@@ -238,7 +248,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                   >
                     <Mail className="h-5 w-5 text-primary-600" />
                     <div>
-                      <div className="text-sm font-medium text-slate-900">Email</div>
+                      <div className="text-sm font-medium text-slate-900">{te("email")}</div>
                       <div className="text-sm text-slate-500">{enterprise.contact_email}</div>
                     </div>
                   </a>
@@ -253,9 +263,9 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                   >
                     <Globe className="h-5 w-5 text-primary-600" />
                     <div>
-                      <div className="text-sm font-medium text-slate-900">Website</div>
+                      <div className="text-sm font-medium text-slate-900">{te("website", { defaultMessage: "Website" })}</div>
                       <div className="flex items-center gap-1 text-sm text-primary-600">
-                        Visit website <ExternalLink className="h-3 w-3" />
+                        {te("visitWebsite")} <ExternalLink className="h-3 w-3" />
                       </div>
                     </div>
                   </a>
@@ -265,14 +275,14 @@ export default async function EnterpriseDetailPage({ params }: Props) {
               {/* Location */}
               {(category || region) && (
                 <div className="mt-6 border-t border-slate-100 pt-4">
-                  <h4 className="mb-2 text-sm font-semibold text-slate-700">Location & Category</h4>
+                  <h4 className="mb-2 text-sm font-semibold text-slate-700">{te("locationCategory")}</h4>
                   <div className="space-y-1 text-sm text-slate-600">
                     {region && (
                       <Link
                         href={`/regions/${region.slug}`}
                         className="block hover:text-primary-600"
                       >
-                        📍 {region.name_en} ({region.name_zh})
+                        📍 {getLocalizedName(region, locale)}
                       </Link>
                     )}
                     {category && (
@@ -280,7 +290,7 @@ export default async function EnterpriseDetailPage({ params }: Props) {
                         href={`/categories/${category.slug}`}
                         className="block hover:text-primary-600"
                       >
-                        🏭 {category.name_en}
+                        🏭 {getLocalizedName(category, locale)}
                       </Link>
                     )}
                   </div>
@@ -291,12 +301,18 @@ export default async function EnterpriseDetailPage({ params }: Props) {
         </div>
 
         {/* Related Enterprises */}
-        {relatedEnterprises.length > 0 && (
+        {relatedEnterprises.length > 0 && category && (
           <div className="mt-12">
-            <h2 className="section-title">More Factories in {category?.name_en}</h2>
+            <h2 className="section-title">{te("moreFactories")} {getLocalizedName(category, locale)}</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {relatedEnterprises.map((ent) => (
-                <EnterpriseCard key={ent.id} enterprise={ent} />
+                <EnterpriseCard
+                  key={ent.id}
+                  enterprise={ent}
+                  locale={locale}
+                  verifiedLabel={te("verified")}
+                  premiumLabel={te("premium")}
+                />
               ))}
             </div>
           </div>

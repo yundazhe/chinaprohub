@@ -5,14 +5,24 @@ import CertificationBadge from "./CertificationBadge";
 
 interface EnterpriseCardProps {
   enterprise: Enterprise;
+  locale: string;
   categoryName?: string;
   regionName?: string;
+  verifiedLabel?: string;
+  premiumLabel?: string;
 }
 
 export default function EnterpriseCard({
   enterprise,
+  locale,
   regionName,
+  verifiedLabel = "Verified",
+  premiumLabel = "Premium",
 }: EnterpriseCardProps) {
+  const name = locale === "zh" ? enterprise.name_zh : enterprise.name_en;
+  const subtitle = locale === "zh" ? enterprise.name_en : enterprise.name_zh;
+  const description = locale === "zh" ? enterprise.description_zh : enterprise.description_en;
+
   return (
     <Link
       href={`/enterprises/${enterprise.slug}`}
@@ -21,25 +31,27 @@ export default function EnterpriseCard({
       <div className="mb-3 flex items-start justify-between">
         <div>
           <h3 className="text-base font-semibold text-slate-900 group-hover:text-primary-600">
-            {enterprise.name_en}
+            {name}
           </h3>
-          <p className="text-sm text-slate-500">{enterprise.name_zh}</p>
+          <p className="text-sm text-slate-500">{subtitle}</p>
         </div>
         {enterprise.verification_status === "premium" && (
           <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">
-            Premium
+            {premiumLabel}
           </span>
         )}
         {enterprise.verification_status === "verified" && (
           <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
-            Verified
+            {verifiedLabel}
           </span>
         )}
       </div>
 
-      <p className="mb-3 text-sm text-slate-600 line-clamp-2">
-        {enterprise.description_en}
-      </p>
+      {description && (
+        <p className="mb-3 text-sm text-slate-600 line-clamp-2">
+          {description}
+        </p>
+      )}
 
       <div className="mb-3 flex flex-wrap gap-1.5">
         {enterprise.certifications.slice(0, 4).map((cert) => (

@@ -21,7 +21,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function EnterprisesPage() {
+export default async function EnterprisesPage({ params }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale: params.locale, namespace: "enterprises" });
+
   const [enterprises, categories, regions] = await Promise.all([
     dataService.getAllEnterprises(),
     dataService.getAllCategories(),
@@ -32,10 +34,9 @@ export default async function EnterprisesPage() {
     <div className="py-12 sm:py-16">
       <div className="container-custom">
         <div className="text-center">
-          <h1 className="section-title">Enterprise Directory</h1>
+          <h1 className="section-title">{t("title")}</h1>
           <p className="section-subtitle mx-auto max-w-2xl">
-            Browse verified Chinese factories. Each listing includes contact
-            information, certifications, and product details.
+            {t("subtitle")}
           </p>
         </div>
 

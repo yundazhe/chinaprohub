@@ -10,9 +10,11 @@ import { getTranslations } from "next-intl/server";
 
 export const revalidate = 3600;
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   const t = await getTranslations("home");
   const tc = await getTranslations("common");
+  const te = await getTranslations("enterprises");
 
   const [categories, regions, enterprises] = await Promise.all([
     dataService.getAllCategories(),
@@ -114,7 +116,7 @@ export default async function HomePage() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((category) => (
-              <CategoryCard key={category.id} category={category} />
+              <CategoryCard key={category.id} category={category} locale={locale} browseText={tc("browseFactories")} />
             ))}
           </div>
           <div className="mt-6 text-center sm:hidden">
@@ -144,7 +146,7 @@ export default async function HomePage() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {regions.map((region) => (
-              <RegionCard key={region.id} region={region} />
+              <RegionCard key={region.id} region={region} locale={locale} />
             ))}
           </div>
         </div>
@@ -169,7 +171,13 @@ export default async function HomePage() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {enterprises.map((enterprise) => (
-              <EnterpriseCard key={enterprise.id} enterprise={enterprise} />
+              <EnterpriseCard
+                key={enterprise.id}
+                enterprise={enterprise}
+                locale={locale}
+                verifiedLabel={te("verified")}
+                premiumLabel={te("premium")}
+              />
             ))}
           </div>
         </div>

@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import EnterpriseCard from "./EnterpriseCard";
 import type { Enterprise, Category, Region } from "@/types/database";
+import { getLocalizedName } from "@/lib/locale-fields";
 
 interface EnterpriseGridWithFilterProps {
   enterprises: Enterprise[];
@@ -17,6 +18,7 @@ export default function EnterpriseGridWithFilter({
   regions,
 }: EnterpriseGridWithFilterProps) {
   const t = useTranslations("enterprises");
+  const locale = useLocale();
   const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
   const allCertifications = useMemo(() => {
@@ -83,8 +85,11 @@ export default function EnterpriseGridWithFilter({
             <EnterpriseCard
               key={enterprise.id}
               enterprise={enterprise}
-              categoryName={category?.name_en}
-              regionName={region?.name_en}
+              locale={locale}
+              categoryName={category ? getLocalizedName(category, locale) : undefined}
+              regionName={region ? getLocalizedName(region, locale) : undefined}
+              verifiedLabel={t("verified")}
+              premiumLabel={t("premium")}
             />
           );
         })}

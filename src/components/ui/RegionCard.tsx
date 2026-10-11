@@ -1,12 +1,18 @@
 import { Link } from "@/i18n/routing";
 import { MapPin } from "lucide-react";
 import type { Region } from "@/types/database";
+import { getLocalizedName, getLocalizedDescription } from "@/lib/locale-fields";
 
 interface RegionCardProps {
   region: Region;
+  locale: string;
 }
 
-export default function RegionCard({ region }: RegionCardProps) {
+export default function RegionCard({ region, locale }: RegionCardProps) {
+  const name = getLocalizedName(region, locale);
+  const description = getLocalizedDescription(region, locale);
+  const subtitle = locale === "en" ? region.name_zh : (locale === "zh" ? region.name_en : "");
+
   return (
     <Link
       href={`/regions/${region.slug}`}
@@ -19,9 +25,14 @@ export default function RegionCard({ region }: RegionCardProps) {
         </span>
       </div>
       <h3 className="text-base font-semibold text-slate-900 group-hover:text-primary-600">
-        {region.name_en}
+        {name}
       </h3>
-      <p className="mt-0.5 text-sm text-slate-500">{region.name_zh}</p>
+      {subtitle && (
+        <p className="mt-0.5 text-sm text-slate-500">{subtitle}</p>
+      )}
+      {description && (
+        <p className="mt-1 text-sm text-slate-600 line-clamp-2">{description}</p>
+      )}
       {region.core_products.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {region.core_products.slice(0, 4).map((product) => (
