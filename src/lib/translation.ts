@@ -3,6 +3,7 @@ import { getTranslateConfig } from "./settings";
 import { serviceClient } from "./supabase-server";
 
 export const TARGET_LOCALES = ["en", "es", "ar", "ru", "fr"];
+export const NAME_COLS = ["name_es", "name_ar", "name_ru", "name_fr"];
 export type TranslateConfig = { base_url: string; api_key: string; model: string };
 
 export function maskSecret(key: string): string {
