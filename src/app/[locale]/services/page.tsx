@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { SearchCheck, Footprints, UserCheck, ClipboardCheck, Ship, Wallet, Mail } from "lucide-react";
+import { SearchCheck, Footprints, UserCheck, ClipboardCheck, Ship, Wallet, Mail, CreditCard } from "lucide-react";
+import { getSiteConfig } from "@/lib/settings";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "services" });
@@ -16,6 +17,8 @@ const CONTACT_EMAIL = "540540777@qq.com";
 export default async function ServicesPage({ params }: { params: { locale: string } }) {
   const t = await getTranslations({ locale: params.locale, namespace: "services" });
   const hiw = await getTranslations({ locale: params.locale, namespace: "howItWorks" });
+  const site = await getSiteConfig();
+  const bookingHref = site.booking_url || `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Factory audit visit booking")}`;
   const items = [
     { icon: SearchCheck, title: t("matchTitle"), body: t("matchBody") },
     { icon: Footprints, title: t("auditTitle"), body: t("auditBody") },
@@ -58,14 +61,15 @@ export default async function ServicesPage({ params }: { params: { locale: strin
         <section className="mt-12 rounded-2xl border-2 border-primary-600 bg-white p-8 sm:p-10">
           <p className="text-xs font-bold uppercase tracking-widest text-primary-600">{t("bookEyebrow")}</p>
           <p className="mt-3 text-4xl font-extrabold text-primary-700">
-            {t("bookPrice")} <span className="text-lg font-semibold text-slate-500">{t("bookPer")}</span>
+            {site.booking_price} <span className="text-lg font-semibold text-slate-500">{t("bookPer")}</span>
           </p>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">{t("bookBody")}</p>
           <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Factory audit visit booking")}`}
+            href={bookingHref}
+            {...(site.booking_url ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className="btn-primary mt-6 inline-flex items-center gap-2"
           >
-            <Mail className="h-4 w-4" />
+            {site.booking_url ? <CreditCard className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
             {t("bookCta")}
           </a>
         </section>

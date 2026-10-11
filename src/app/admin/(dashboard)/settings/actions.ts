@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth";
-import { getTranslateConfig, setTranslateConfig } from "@/lib/settings";
+import { getTranslateConfig, setTranslateConfig, setSiteConfig, validateBookingUrl } from "@/lib/settings";
 import { chatCompletion } from "@/lib/llm";
 
 export type SettingsState = { msg?: string; err?: string; tested?: string };
@@ -37,4 +37,21 @@ export async function testConnection(): Promise<SettingsState> {
   } catch (e) {
     return { err: `连接失败：${(e as Error).message}` };
   }
+}
+
+export async function saveSiteConfig(_prev: SettingsState | null, fd: FormData): Promise<SettingsState> {
+  await requireAdmin();
+  const c = {
+    booking_price: String(fd.get("booking_price") ?? "").trim(),
+    booking_url: String(fd.get("booking_url") ?? "").trim(),
+  };
+  if (!c.booking_price) return { err: "请填写预订价格" };
+  const bad = validateBookingUrl(c.booking_url);
+  if (bad) return { err: bad };
+  const saved = await setSiteConfig(c);
+  if (saved?.err) return { err: "保存失败：" + saved.err };
+  revalidatePath("/admin/settings");
+  // 前台 services/how-it-works 等静态页依赖此配置，需按 layout 失效
+  revalidatePath("/", "layout");
+  return { msg: "已保存" };
 }
