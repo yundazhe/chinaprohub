@@ -10,7 +10,7 @@ export const mockCategories: Category[] = [
   },
   {
     id: "cat-002", slug: "machinery-equipment", name_en: "Machinery & Equipment", name_zh: "机械与设备",
-    icon: "️", sort_order: 2, enterprise_count: 0,
+    icon: "⚙️", sort_order: 2, enterprise_count: 0,
     description_en: "Construction machinery, agricultural equipment, CNC machines, packaging machines",
     description_zh: "工程机械、农业机械、CNC机床、包装机械",
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
@@ -123,7 +123,7 @@ export const mockRegions: Region[] = [
   {
     id: "reg-005", slug: "nantong-home-textiles", name_en: "Nantong Home Textiles", name_zh: "南通家纺",
     type: "cluster", core_products: ["Bedding", "Towels", "Curtains", "Fabrics"],
-    description_en: "China's home textile capital, Die石桥 market",
+    description_en: "China's home textile capital, Dieshiqiao market",
     description_zh: "中国家纺之都，叠石桥市场",
     enterprise_count: 0,
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
