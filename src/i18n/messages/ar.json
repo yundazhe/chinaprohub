@@ -77,7 +77,9 @@
     "factory": "متر مربع مصنع",
     "moq": "الحد الأدنى",
     "est": "تأسس",
-    "visitWebsite": "زيارة الموقع"
+    "visitWebsite": "زيارة الموقع",
+    "filterByCert": "تصفية حسب الشهادة",
+    "allCerts": "الكل"
   },
   "search": {
     "title": "البحث عن المصانع",
