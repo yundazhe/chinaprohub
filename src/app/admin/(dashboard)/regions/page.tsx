@@ -4,9 +4,9 @@ import DataTable from "@/components/admin/DataTable";
 import Link from "next/link";
 import { remove } from "./actions";
 
-// JSONB 数组列 → 逗号文本展示（specializations 缺省时回退 schema 中已有的 core_products）
-function joinList(v: unknown, fallback: unknown): string {
-  const arr = Array.isArray(v) ? v : Array.isArray(fallback) ? fallback : [];
+// JSONB 数组列 → 逗号文本展示
+function joinList(v: unknown): string {
+  const arr = Array.isArray(v) ? v : [];
   return arr.map(String).join(", ") || "—";
 }
 
@@ -30,9 +30,9 @@ export default async function RegionsAdmin() {
           { key: "name_en", label: "英文名" },
           { key: "slug", label: "slug" },
           {
-            key: "specializations",
+            key: "core_products",
             label: "特色产品",
-            render: (r) => joinList(r.specializations, r.core_products),
+            render: (r) => joinList(r.core_products),
           },
         ]}
       />
