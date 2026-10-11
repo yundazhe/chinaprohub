@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  .section-title {
+    @apply text-2xl font-bold text-slate-900 sm:text-3xl;
+  }
+  .section-subtitle {
+    @apply mt-2 text-base text-slate-600 sm:text-lg;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md;
   }
 }
