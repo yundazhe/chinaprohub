@@ -64,15 +64,27 @@ export async function translateRow(
   return patch;
 }
 
+// applyTranslationChecked：与 applyTranslation 相同的翻译+落库流程，但把落库错误显式返回，
+// 供手动补翻译等需要向 UI 反馈失败的调用方使用。
+export async function applyTranslationChecked(
+  table: string, row: Record<string, unknown>, configOverride?: TranslateConfig | null
+): Promise<{ patch: Record<string, string>; err?: string }> {
+  const config = configOverride ?? await getTranslateConfig();
+  if (!config?.api_key) return { patch: {} };
+  const patch = await translateRow(config, table, row);
+  if (!Object.keys(patch).length) return { patch };
+  const { error } = await serviceClient().from(table).update(patch).eq("id", row.id as string);
+  if (error) {
+    console.error("translation persist failed", table, error.message);
+    return { patch, err: error.message };
+  }
+  return { patch };
+}
+
+// 保存主流程用：翻译失败绝不阻塞保存（仅记日志、丢 err），故保持原签名。
 export async function applyTranslation(
   table: string, row: Record<string, unknown>, configOverride?: TranslateConfig | null
 ): Promise<Record<string, string>> {
-  const config = configOverride ?? await getTranslateConfig();
-  if (!config?.api_key) return {};
-  const patch = await translateRow(config, table, row);
-  if (Object.keys(patch).length) {
-    const { error } = await serviceClient().from(table).update(patch).eq("id", row.id as string);
-    if (error) console.error("translation persist failed", table, error.message);
-  }
-  return patch;
+  const res = await applyTranslationChecked(table, row, configOverride);
+  return res.patch;
 }

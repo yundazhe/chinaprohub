@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { makeSaveHandler, deleteRow } from "@/lib/crud-factory";
 import { requireAdmin } from "@/lib/auth";
 import { serviceClient } from "@/lib/supabase-server";
-import { applyTranslation } from "@/lib/translation";
+import { applyTranslationChecked } from "@/lib/translation";
 import { PRODUCTS } from "@/app/admin/entities";
 
 const saveHandler = makeSaveHandler(PRODUCTS);
@@ -23,7 +23,8 @@ export async function retranslate(id: string): Promise<{ ok?: boolean; err?: str
   await requireAdmin();
   const { data } = await serviceClient().from("products").select("*").eq("id", id).single();
   if (!data) return { err: "不存在" };
-  const patch = await applyTranslation("products", data);
+  const { patch, err } = await applyTranslationChecked("products", data);
   revalidatePath("/", "layout");
-  return Object.keys(patch).length ? { ok: true } : { err: "翻译失败或无需翻译，请检查设置" };
+  if (err) return { err: "翻译保存失败：" + err };
+  return Object.keys(patch).length ? { ok: true } : { err: "无需翻译或 API 未配置" };
 }

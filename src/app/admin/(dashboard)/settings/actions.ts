@@ -21,7 +21,8 @@ export async function saveConfig(_prev: SettingsState | null, fd: FormData): Pro
     c.api_key = old?.api_key ?? "";
   }
   if (!c.api_key) return { err: "请填写 API Key" };
-  await setTranslateConfig(c);
+  const saved = await setTranslateConfig(c);
+  if (saved?.err) return { err: "保存失败：" + saved.err };
   revalidatePath("/admin/settings");
   return { msg: "已保存" };
 }

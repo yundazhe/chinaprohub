@@ -108,11 +108,16 @@ export async function deleteRow(def: EntityDef, id: string): Promise<{ err?: str
     if (count) return { err: `仍有 ${count} 家企业引用，请先迁移后再删除` };
   }
   const { error } = await db.from(def.table).delete().eq("id", id);
-  return error ? { err: error.message } : {};
+  if (error) return { err: error.message };
+  // 删除同样影响前台页面 → 与 save/toggle 一致做全量 layout 失效，避免悬挂缓存页最长 1 小时。
+  revalidatePath("/", "layout");
+  return {};
 }
 
-export async function toggleActive(id: string, active: boolean): Promise<void> {
+export async function toggleActive(id: string, active: boolean): Promise<{ err?: string }> {
   await requireAdmin();
-  await serviceClient().from("enterprises").update({ is_active: active }).eq("id", id);
+  const { error } = await serviceClient().from("enterprises").update({ is_active: active }).eq("id", id);
+  if (error) return { err: error.message };
   revalidatePath("/", "layout");
+  return {};
 }

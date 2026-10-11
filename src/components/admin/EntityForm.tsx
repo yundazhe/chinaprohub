@@ -6,7 +6,8 @@ import type { Choice } from "./ui";
 // 仅类型导入（编译期擦除），避免把 crud-factory 的服务端依赖带入 client bundle。
 import type { EntityDef } from "@/lib/crud-factory";
 
-const LOCALES = ["es", "ar", "ru", "fr"] as const;
+// 含 en：name_en/description_en 可人工录入/锁定（翻译引擎以 name_en 为目标且检查其锁）。
+const LOCALES = ["en", "es", "ar", "ru", "fr"] as const;
 
 export default function EntityForm({
   def,

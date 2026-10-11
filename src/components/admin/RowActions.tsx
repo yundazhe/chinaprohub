@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
-// 列表行内附加操作：补翻译（applyTranslation）与 上架/下架（toggleActive）。
+// 列表行内附加操作：补翻译（applyTranslationChecked）与 上架/下架（toggleActive）。
 // server action 由页面（RSC）作 prop 传入，模式同 DeleteButton。
 export function RowActions({
   id,
@@ -14,8 +14,8 @@ export function RowActions({
   // 当前 is_active；仅传入 toggleAction 时使用。
   active?: boolean;
   retranslateAction: (id: string) => Promise<{ ok?: boolean; err?: string }>;
-  // (id, nextActive) => void；缺省则不渲染上/下架按钮（products 无 is_active 列）。
-  toggleAction?: (id: string, active: boolean) => Promise<void>;
+  // (id, nextActive) => { err? }；缺省则不渲染上/下架按钮（products 无 is_active 列）。
+  toggleAction?: (id: string, active: boolean) => Promise<{ err?: string }>;
 }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -29,7 +29,8 @@ export function RowActions({
           className="text-amber-700 hover:underline disabled:opacity-50"
           onClick={() => {
             startTransition(async () => {
-              await toggleAction!(id, !active);
+              const res = await toggleAction!(id, !active);
+              if (res?.err) window.alert(res.err);
               router.refresh();
             });
           }}

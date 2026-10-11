@@ -10,6 +10,7 @@ export function getTranslateConfig(): Promise<TranslateConfig | null> {
   return kv("translate_config");
 }
 
-export async function setTranslateConfig(c: TranslateConfig) {
-  await serviceClient().from("admin_settings").upsert({ key: "translate_config", value: c, updated_at: new Date().toISOString() });
+export async function setTranslateConfig(c: TranslateConfig): Promise<{ err?: string }> {
+  const { error } = await serviceClient().from("admin_settings").upsert({ key: "translate_config", value: c, updated_at: new Date().toISOString() });
+  return error ? { err: error.message } : {};
 }
