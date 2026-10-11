@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, use } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Search, SlidersHorizontal, X, MapPin, ChevronDown } from "lucide-react";
@@ -36,8 +36,8 @@ interface SearchData {
 
 const PAGE_SIZE = 12;
 
-export default function SearchPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+export default function SearchPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   const tSearch = useTranslations("search");
   const tCommon = useTranslations("common");
   const tEnterprises = useTranslations("enterprises");
