@@ -75,7 +75,7 @@ export function makeSaveHandler(def: EntityDef) {
       ? (await db.from(def.table).select("*").eq("id", id).single()).data
       : (await db.from(def.table).select("*").order("created_at", { ascending: false }).limit(1).single()).data;
     // insert 时 name_en 可能为空 → 先翻译补出 name_en 再回填 slug
-    await applyTranslation(def.table, saved);
+    if (saved) await applyTranslation(def.table, saved);
     if (!id && def.table !== "products" && saved && !saved.slug) {
       const fresh = (await db.from(def.table).select("name_en").eq("id", saved.id).single()).data;
       if (fresh?.name_en) {
