@@ -11,7 +11,7 @@ const intlMiddleware: (request: NextRequest, event: NextFetchEvent) => NextRespo
 export default async function middleware(request: NextRequest, event: NextFetchEvent) {
   const { pathname } = request.nextUrl;
   // /admin 与 /portal 不走 i18n 前缀路由，仅在此刷新 Supabase 会话 cookie
-  if (pathname.startsWith("/admin") || pathname.startsWith("/portal")) {
+  if (pathname === "/admin" || pathname.startsWith("/admin/") || pathname === "/portal" || pathname.startsWith("/portal/")) {
     const response = NextResponse.next({ request });
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

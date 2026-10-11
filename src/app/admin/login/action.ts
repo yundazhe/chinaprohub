@@ -11,6 +11,11 @@ export async function login(formData: FormData): Promise<{ error?: string }> {
     password: String(formData.get("password") ?? ""),
   });
   if (error) return { error: "邮箱或密码错误" };
+  const { data } = await supabase.auth.getUser();
+  if (data.user?.app_metadata?.role !== "admin") {
+    await supabase.auth.signOut();
+    return { error: "该账号无后台权限" };
+  }
   revalidatePath("/admin", "layout");
   redirect("/admin");
 }
