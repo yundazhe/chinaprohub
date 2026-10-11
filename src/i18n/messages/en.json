@@ -12,7 +12,8 @@
     "loading": "Loading...",
     "noResults": "No results found.",
     "contact": "Contact",
-    "email": "Email"
+    "email": "Email",
+    "browseFactories": "Browse factories"
   },
   "nav": {
     "categories": "Categories",

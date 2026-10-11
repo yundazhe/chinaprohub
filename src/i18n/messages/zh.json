@@ -12,7 +12,8 @@
     "loading": "加载中...",
     "noResults": "未找到结果。",
     "contact": "联系",
-    "email": "邮箱"
+    "email": "邮箱",
+    "browseFactories": "浏览工厂"
   },
   "nav": {
     "categories": "产品分类",

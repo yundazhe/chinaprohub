@@ -12,7 +12,8 @@
     "loading": "Chargement...",
     "noResults": "Aucun résultat trouvé.",
     "contact": "Contact",
-    "email": "E-mail"
+    "email": "E-mail",
+    "browseFactories": "Parcourir les usines"
   },
   "nav": {
     "categories": "Catégories",

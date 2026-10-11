@@ -12,7 +12,8 @@
     "loading": "Cargando...",
     "noResults": "No se encontraron resultados.",
     "contact": "Contacto",
-    "email": "Correo electrónico"
+    "email": "Correo electrónico",
+    "browseFactories": "Explorar fábricas"
   },
   "nav": {
     "categories": "Categorías",
