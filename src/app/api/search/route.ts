@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
       offset,
     });
     return NextResponse.json(results);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Search failed", hits: [], total: 0, processingTimeMs: 0, query },
       { status: 500 }

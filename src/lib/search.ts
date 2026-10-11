@@ -60,7 +60,7 @@ export async function searchEnterprises(
     // Mock search
     const { enterprises, categories, regions } = await mockEnterprises();
     const q = query.toLowerCase();
-    let results = enterprises.filter((e) => {
+    const results = enterprises.filter((e) => {
       if (!e.is_active) return false;
       const matchesQuery = !q ||
         e.name_en.toLowerCase().includes(q) ||

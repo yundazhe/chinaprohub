@@ -18,8 +18,6 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const currentLabel = locales.find((l) => l.code === locale)?.label || "English";
-
   return (
     <div className="relative">
       <select

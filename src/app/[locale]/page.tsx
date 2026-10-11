@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { Search, ArrowRight, Building2, MapPin, Factory } from "lucide-react";
+import { Search, ArrowRight, Factory } from "lucide-react";
 import { dataService } from "@/lib/data";
 import CategoryCard from "@/components/ui/CategoryCard";
 import RegionCard from "@/components/ui/RegionCard";

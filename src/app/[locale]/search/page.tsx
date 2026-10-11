@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, use } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Search, SlidersHorizontal, X, MapPin, ChevronDown } from "lucide-react";
 import CertificationBadge from "@/components/ui/CertificationBadge";
@@ -41,8 +41,6 @@ export default function SearchPage({ params }: { params: Promise<{ locale: strin
   const tSearch = useTranslations("search");
   const tCommon = useTranslations("common");
   const tEnterprises = useTranslations("enterprises");
-  const tCategories = useTranslations("categories");
-  const tRegions = useTranslations("regions");
 
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");

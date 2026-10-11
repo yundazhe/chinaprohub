@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {

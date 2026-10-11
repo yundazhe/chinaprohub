@@ -2,13 +2,13 @@ import { supabase, isSupabaseConfigured } from "./supabase";
 import { mockCategories, mockRegions, mockEnterprises } from "@/data/mock";
 import type { Category, Region, Enterprise } from "@/types/database";
 
-function useMock(): boolean {
+function shouldUseMock(): boolean {
   return !isSupabaseConfigured();
 }
 
 export const dataService = {
   async getAllCategories(): Promise<Category[]> {
-    if (useMock()) return mockCategories;
+    if (shouldUseMock()) return mockCategories;
     const { data } = await supabase!
       .from("categories")
       .select("*")
@@ -17,7 +17,7 @@ export const dataService = {
   },
 
   async getCategoryBySlug(slug: string): Promise<Category | null> {
-    if (useMock()) return mockCategories.find((c) => c.slug === slug) ?? null;
+    if (shouldUseMock()) return mockCategories.find((c) => c.slug === slug) ?? null;
     const { data } = await supabase!
       .from("categories")
       .select("*")
@@ -27,7 +27,7 @@ export const dataService = {
   },
 
   async getAllRegions(): Promise<Region[]> {
-    if (useMock()) return mockRegions;
+    if (shouldUseMock()) return mockRegions;
     const { data } = await supabase!
       .from("regions")
       .select("*")
@@ -36,7 +36,7 @@ export const dataService = {
   },
 
   async getRegionBySlug(slug: string): Promise<Region | null> {
-    if (useMock()) return mockRegions.find((r) => r.slug === slug) ?? null;
+    if (shouldUseMock()) return mockRegions.find((r) => r.slug === slug) ?? null;
     const { data } = await supabase!
       .from("regions")
       .select("*")
@@ -50,7 +50,7 @@ export const dataService = {
     categoryId?: string;
     regionId?: string;
   }): Promise<Enterprise[]> {
-    if (useMock()) {
+    if (shouldUseMock()) {
       let results = mockEnterprises.filter((e) => e.is_active);
       if (options?.categoryId) results = results.filter((e) => e.category_id === options.categoryId);
       if (options?.regionId) results = results.filter((e) => e.region_id === options.regionId);
@@ -66,7 +66,7 @@ export const dataService = {
   },
 
   async getEnterpriseBySlug(slug: string): Promise<Enterprise | null> {
-    if (useMock()) return mockEnterprises.find((e) => e.slug === slug && e.is_active) ?? null;
+    if (shouldUseMock()) return mockEnterprises.find((e) => e.slug === slug && e.is_active) ?? null;
     const { data } = await supabase!
       .from("enterprises")
       .select("*")
@@ -89,7 +89,7 @@ export const dataService = {
   },
 
   async incrementViewCount(enterpriseId: string): Promise<void> {
-    if (useMock()) return;
+    if (shouldUseMock()) return;
     await supabase!
       .from("enterprises")
       .update({ view_count: supabase!.rpc("increment_view_count", { enterprise_id: enterpriseId }) })

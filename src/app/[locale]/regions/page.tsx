@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Link } from "@/i18n/routing";
-import { ArrowRight } from "lucide-react";
 import { dataService } from "@/lib/data";
 import RegionCard from "@/components/ui/RegionCard";
 
