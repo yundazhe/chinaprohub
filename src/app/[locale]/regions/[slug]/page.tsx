@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowLeft, MapPin, Building2 } from "lucide-react";
 import { dataService } from "@/lib/data";
 import EnterpriseCard from "@/components/ui/EnterpriseCard";

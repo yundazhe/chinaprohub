@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { MapPin, Globe } from "lucide-react";
 import type { Enterprise } from "@/types/database";
 import CertificationBadge from "./CertificationBadge";

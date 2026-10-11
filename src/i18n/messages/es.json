@@ -1,0 +1,132 @@
+{
+  "common": {
+    "siteName": "ChinaProHub",
+    "tagline": "Fábricas en China",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar productos, fábricas o regiones...",
+    "viewAll": "Ver todo",
+    "viewAllCategories": "Ver todas las categorías",
+    "viewAllClusters": "Ver todos los clústeres",
+    "viewAllEnterprises": "Ver todas las empresas",
+    "back": "Volver",
+    "loading": "Cargando...",
+    "noResults": "No se encontraron resultados.",
+    "contact": "Contacto",
+    "email": "Correo electrónico"
+  },
+  "nav": {
+    "categories": "Categorías",
+    "regions": "Regiones",
+    "enterprises": "Empresas",
+    "about": "Acerca de",
+    "search": "Buscar",
+    "listFactory": "Registrar su fábrica"
+  },
+  "home": {
+    "heroTitle1": "Hecho en China,",
+    "heroTitle2": "Compre de los mejores.",
+    "heroSubtitle": "Un directorio de fábricas verificadas en China. Explore por categoría de producto, clúster industrial o región. Compare y contacte fábricas directamente.",
+    "popularLabel": "Popular:",
+    "statsCategories": "Categorías de productos",
+    "statsClusters": "Clústeres industriales",
+    "statsEnterprises": "Empresas registradas",
+    "statsProvinces": "Provincias cubiertas",
+    "categoriesTitle": "Explorar por categoría",
+    "categoriesSubtitle": "Encuentre fábricas por tipo de producto",
+    "clustersTitle": "Clústeres industriales clave",
+    "clustersSubtitle": "Donde China fabrica lo mejor — por región",
+    "featuredTitle": "Empresas destacadas",
+    "featuredSubtitle": "Fábricas verificadas listas para sus necesidades de compra",
+    "ctaTitle": "¿Es propietario de una fábrica?",
+    "ctaSubtitle": "Registre su fábrica gratis en ChinaProHub. Llegue a compradores internacionales que buscan proveedores chinos.",
+    "ctaButton": "Registre su fábrica — Es gratis",
+    "browseFactories": "Explorar fábricas"
+  },
+  "categories": {
+    "title": "Categorías de productos",
+    "subtitle": "Explore fábricas por tipo de producto. Desde ferretería y electrónica hasta textiles y alimentos — encuentre el proveedor adecuado.",
+    "allCategories": "Todas las categorías",
+    "factoriesListed": "fábricas registradas",
+    "noFactories": "Aún no hay fábricas registradas",
+    "noFactoriesSub": "Se están añadiendo fábricas en esta categoría. Vuelva pronto."
+  },
+  "regions": {
+    "title": "Clústeres industriales y regiones",
+    "subtitle": "Descubra donde China fabrica lo mejor. Cada clúster se especializa en productos específicos con cadenas de suministro concentradas.",
+    "allRegions": "Todas las regiones",
+    "factoriesInRegion": "fábricas en esta región",
+    "noFactories": "Aún no hay fábricas registradas",
+    "noFactoriesSub": "Se están añadiendo fábricas en esta región. Vuelva pronto."
+  },
+  "enterprises": {
+    "title": "Directorio de empresas",
+    "subtitle": "Explore fábricas chinas verificadas. Cada listado incluye información de contacto, certificaciones y detalles de productos.",
+    "filterBy": "Filtrar por:",
+    "noEnterprises": "Aún no hay empresas registradas.",
+    "allEnterprises": "Todas las empresas",
+    "contactFactory": "Contactar esta fábrica",
+    "certifications": "Certificaciones",
+    "exportMarkets": "Mercados de exportación",
+    "supportsOem": "Soporta OEM/ODM",
+    "locationCategory": "Ubicación y categoría",
+    "moreFactories": "Más fábricas en",
+    "verified": "Verificado",
+    "premium": "Verificado premium",
+    "unverified": "No verificado",
+    "employees": "empleados",
+    "factory": "sqm de fábrica",
+    "moq": "MOQ",
+    "est": "Est.",
+    "visitWebsite": "Visitar sitio web"
+  },
+  "search": {
+    "title": "Buscar fábricas",
+    "placeholder": "Buscar productos, fábricas o regiones...",
+    "results": "resultados",
+    "noResults": "No se encontraron resultados. Intente con otro término.",
+    "filters": "Filtros",
+    "allCategories": "Todas las categorías",
+    "allRegions": "Todas las regiones",
+    "sortBy": "Ordenar por",
+    "relevance": "Relevancia",
+    "popular": "Más popular",
+    "newest": "Más reciente"
+  },
+  "submit": {
+    "title": "Registrar su fábrica",
+    "subtitle": "Envíe la información de su fábrica para ser listado en ChinaProHub. Es gratis.",
+    "comingSoon": "El formulario de registro estará disponible pronto. Contáctenos en",
+    "toGetListed": "para ser listado."
+  },
+  "about": {
+    "title": "Acerca de ChinaProHub",
+    "mission": "Nuestra misión",
+    "missionText": "Cerrar la brecha de información entre compradores internacionales y fabricantes chinos. Creemos que encontrar la fábrica adecuada debe ser transparente, eficiente y accesible para empresas de todos los tamaños.",
+    "principles": "Principios de listado",
+    "principle1": "Listado gratuito — sin pago por ranking, sin certificaciones pagadas",
+    "principle2": "Información verificada — revisamos todos los datos enviados",
+    "principle3": "Contacto directo — el comprador conecta directamente con la fábrica",
+    "principle4": "Multiidioma — atendemos compradores en todo el mundo",
+    "contactUs": "Contáctenos",
+    "contactText": "Para consultas, asociaciones o correcciones de datos, envíenos un correo a"
+  },
+  "footer": {
+    "description": "Su puerta de entrada a proveedores chinos verificados. Explore por categoría de producto, clúster industrial o región.",
+    "browse": "Explorar",
+    "about": "Acerca de",
+    "aboutUs": "Sobre nosotros",
+    "contact": "Contacto",
+    "contactLabel": "Contacto",
+    "contactDesc": "Para consultas, asociaciones o correcciones de datos:",
+    "copyright": "Todos los derechos reservados."
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ar": "العربية",
+    "ru": "Русский",
+    "fr": "Français"
+  }
+}

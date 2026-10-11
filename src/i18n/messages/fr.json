@@ -1,0 +1,132 @@
+{
+  "common": {
+    "siteName": "ChinaProHub",
+    "tagline": "Source d'usines en Chine",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher des produits, usines ou régions...",
+    "viewAll": "Voir tout",
+    "viewAllCategories": "Voir toutes les catégories",
+    "viewAllClusters": "Voir tous les clusters",
+    "viewAllEnterprises": "Voir toutes les entreprises",
+    "back": "Retour",
+    "loading": "Chargement...",
+    "noResults": "Aucun résultat trouvé.",
+    "contact": "Contact",
+    "email": "E-mail"
+  },
+  "nav": {
+    "categories": "Catégories",
+    "regions": "Régions",
+    "enterprises": "Entreprises",
+    "about": "À propos",
+    "search": "Rechercher",
+    "listFactory": "Inscrire votre usine"
+  },
+  "home": {
+    "heroTitle1": "Fabriqué en Chine,",
+    "heroTitle2": "Achetez auprès des meilleurs.",
+    "heroSubtitle": "Un répertoire d'usines vérifiées en Chine. Parcourez par catégorie de produit, cluster industriel ou région. Comparez et contactez les usines directement.",
+    "popularLabel": "Populaire :",
+    "statsCategories": "Catégories de produits",
+    "statsClusters": "Clusters industriels",
+    "statsEnterprises": "Entreprises inscrites",
+    "statsProvinces": "Provinces couvertes",
+    "categoriesTitle": "Parcourir par catégorie",
+    "categoriesSubtitle": "Trouvez des usines par type de produit",
+    "clustersTitle": "Clusters industriels clés",
+    "clustersSubtitle": "Où la Chine fabrique le mieux — par région",
+    "featuredTitle": "Entreprises en vedette",
+    "featuredSubtitle": "Des usines vérifiées prêtes pour vos besoins d'approvisionnement",
+    "ctaTitle": "Vous êtes propriétaire d'une usine ?",
+    "ctaSubtitle": "Inscrivez votre usine gratuitement sur ChinaProHub. Atteignez les acheteurs internationaux qui recherchent des fournisseurs chinois.",
+    "ctaButton": "Inscrire votre usine — C'est gratuit",
+    "browseFactories": "Parcourir les usines"
+  },
+  "categories": {
+    "title": "Catégories de produits",
+    "subtitle": "Parcourez les usines par type de produit. De la quincaillerie et l'électronique aux textiles et à l'alimentation — trouvez le bon fournisseur.",
+    "allCategories": "Toutes les catégories",
+    "factoriesListed": "usines inscrites",
+    "noFactories": "Aucune usine inscrite pour le moment",
+    "noFactoriesSub": "Des usines sont ajoutées dans cette catégorie. Revenez bientôt."
+  },
+  "regions": {
+    "title": "Clusters industriels et régions",
+    "subtitle": "Découvrez où la Chine fabrique le mieux. Chaque cluster se spécialise dans des produits spécifiques avec des chaînes d'approvisionnement concentrées.",
+    "allRegions": "Toutes les régions",
+    "factoriesInRegion": "usines dans cette région",
+    "noFactories": "Aucune usine inscrite pour le moment",
+    "noFactoriesSub": "Des usines sont ajoutées dans cette région. Revenez bientôt."
+  },
+  "enterprises": {
+    "title": "Répertoire des entreprises",
+    "subtitle": "Parcourez les usines chinoises vérifiées. Chaque fiche inclut les coordonnées, les certifications et les détails des produits.",
+    "filterBy": "Filtrer par :",
+    "noEnterprises": "Aucune entreprise inscrite pour le moment.",
+    "allEnterprises": "Toutes les entreprises",
+    "contactFactory": "Contacter cette usine",
+    "certifications": "Certifications",
+    "exportMarkets": "Marchés d'exportation",
+    "supportsOem": "Supporte OEM/ODM",
+    "locationCategory": "Localisation et catégorie",
+    "moreFactories": "Plus d'usines dans",
+    "verified": "Vérifié",
+    "premium": "Vérifié premium",
+    "unverified": "Non vérifié",
+    "employees": "employés",
+    "factory": "sqm d'usine",
+    "moq": "MOQ",
+    "est": "Fondée",
+    "visitWebsite": "Visiter le site"
+  },
+  "search": {
+    "title": "Rechercher des usines",
+    "placeholder": "Rechercher des produits, usines ou régions...",
+    "results": "résultats",
+    "noResults": "Aucun résultat trouvé. Essayez un autre terme.",
+    "filters": "Filtres",
+    "allCategories": "Toutes les catégories",
+    "allRegions": "Toutes les régions",
+    "sortBy": "Trier par",
+    "relevance": "Pertinence",
+    "popular": "Les plus populaires",
+    "newest": "Les plus récents"
+  },
+  "submit": {
+    "title": "Inscrire votre usine",
+    "subtitle": "Soumettez les informations de votre usine pour être répertorié sur ChinaProHub. C'est gratuit.",
+    "comingSoon": "Le formulaire d'inscription arrive bientôt. Contactez-nous à",
+    "toGetListed": "pour être inscrit."
+  },
+  "about": {
+    "title": "À propos de ChinaProHub",
+    "mission": "Notre mission",
+    "missionText": "Combler le fossé d'information entre les acheteurs internationaux et les fabricants chinois. Nous croyons que trouver la bonne usine doit être transparent, efficace et accessible aux entreprises de toutes tailles.",
+    "principles": "Principes d'inscription",
+    "principle1": "Inscription gratuite — pas de paiement pour le classement, pas de certifications payantes",
+    "principle2": "Informations vérifiées — nous examinons toutes les données soumises",
+    "principle3": "Contact direct — l'acheteur se connecte directement avec l'usine",
+    "principle4": "Multilingue — au service des acheteurs du monde entier",
+    "contactUs": "Nous contacter",
+    "contactText": "Pour les demandes, partenariats ou corrections de données, écrivez-nous à"
+  },
+  "footer": {
+    "description": "Votre porte d'entrée vers les fournisseurs chinois vérifiés. Parcourez par catégorie de produit, cluster industriel ou région.",
+    "browse": "Parcourir",
+    "about": "À propos",
+    "aboutUs": "À propos de nous",
+    "contact": "Contact",
+    "contactLabel": "Contact",
+    "contactDesc": "Pour les demandes, partenariats ou corrections de données :",
+    "copyright": "Tous droits réservés."
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ar": "العربية",
+    "ru": "Русский",
+    "fr": "Français"
+  }
+}

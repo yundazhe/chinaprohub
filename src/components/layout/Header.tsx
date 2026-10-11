@@ -1,14 +1,21 @@
-import Link from "next/link";
-import { Search, Menu, X } from "lucide-react";
+"use client";
 
-const navLinks = [
-  { href: "/categories", label: "Categories" },
-  { href: "/regions", label: "Regions" },
-  { href: "/enterprises", label: "Enterprises" },
-  { href: "/about", label: "About" },
-];
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
+import { Search, Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("nav");
+  const tc = useTranslations("common");
+
+  const navLinks = [
+    { href: "/categories" as const, label: t("categories") },
+    { href: "/regions" as const, label: t("regions") },
+    { href: "/enterprises" as const, label: t("enterprises") },
+    { href: "/about" as const, label: t("about") },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
       <div className="container-custom flex h-16 items-center justify-between">
@@ -19,10 +26,10 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold leading-tight text-slate-900">
-              ChinaProHub
+              {tc("siteName")}
             </span>
             <span className="text-[10px] leading-tight text-slate-500 uppercase tracking-wider">
-              Source Factories in China
+              {tc("tagline")}
             </span>
           </div>
         </Link>
@@ -40,17 +47,18 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Search + CTA */}
+        {/* Search + Language + CTA */}
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/search"
             className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm text-slate-500 transition-colors hover:border-primary-300 hover:text-primary-600"
           >
             <Search className="h-4 w-4" />
-            <span>Search</span>
+            <span>{t("search")}</span>
           </Link>
+          <LanguageSwitcher />
           <Link href="/submit" className="btn-primary text-sm">
-            List Your Factory
+            {t("listFactory")}
           </Link>
         </div>
 

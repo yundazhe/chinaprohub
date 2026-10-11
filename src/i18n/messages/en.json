@@ -1,0 +1,132 @@
+{
+  "common": {
+    "siteName": "ChinaProHub",
+    "tagline": "Source Factories in China",
+    "search": "Search",
+    "searchPlaceholder": "Search products, factories, or regions...",
+    "viewAll": "View all",
+    "viewAllCategories": "View all categories",
+    "viewAllClusters": "View all clusters",
+    "viewAllEnterprises": "View all enterprises",
+    "back": "Back",
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "contact": "Contact",
+    "email": "Email"
+  },
+  "nav": {
+    "categories": "Categories",
+    "regions": "Regions",
+    "enterprises": "Enterprises",
+    "about": "About",
+    "search": "Search",
+    "listFactory": "List Your Factory"
+  },
+  "home": {
+    "heroTitle1": "Made in China,",
+    "heroTitle2": "Source from the Best.",
+    "heroSubtitle": "A directory of verified source factories across China. Browse by product category, industrial cluster, or region. Compare and contact factories directly.",
+    "popularLabel": "Popular:",
+    "statsCategories": "Product Categories",
+    "statsClusters": "Industrial Clusters",
+    "statsEnterprises": "Listed Enterprises",
+    "statsProvinces": "Provinces Covered",
+    "categoriesTitle": "Browse by Category",
+    "categoriesSubtitle": "Find factories by product type",
+    "clustersTitle": "Key Industrial Clusters",
+    "clustersSubtitle": "Where China makes it best — by region",
+    "featuredTitle": "Featured Enterprises",
+    "featuredSubtitle": "Verified factories ready for your sourcing needs",
+    "ctaTitle": "Are you a factory owner?",
+    "ctaSubtitle": "List your factory for free on ChinaProHub. Reach international buyers actively searching for Chinese suppliers.",
+    "ctaButton": "List Your Factory — It's Free",
+    "browseFactories": "Browse factories"
+  },
+  "categories": {
+    "title": "Product Categories",
+    "subtitle": "Browse factories by product type. From hardware and electronics to textiles and food — find the right supplier for your needs.",
+    "allCategories": "All Categories",
+    "factoriesListed": "factories listed",
+    "noFactories": "No factories listed yet",
+    "noFactoriesSub": "Factories in this category are being added. Check back soon."
+  },
+  "regions": {
+    "title": "Industrial Clusters & Regions",
+    "subtitle": "Discover where China makes it best. Each cluster specializes in specific products with concentrated supply chains.",
+    "allRegions": "All Regions",
+    "factoriesInRegion": "factories in this region",
+    "noFactories": "No factories listed yet",
+    "noFactoriesSub": "Factories in this region are being added. Check back soon."
+  },
+  "enterprises": {
+    "title": "Enterprise Directory",
+    "subtitle": "Browse verified Chinese factories. Each listing includes contact information, certifications, and product details.",
+    "filterBy": "Filter by:",
+    "noEnterprises": "No enterprises listed yet.",
+    "allEnterprises": "All Enterprises",
+    "contactFactory": "Contact This Factory",
+    "certifications": "Certifications",
+    "exportMarkets": "Export Markets",
+    "supportsOem": "Supports OEM/ODM",
+    "locationCategory": "Location & Category",
+    "moreFactories": "More Factories in",
+    "verified": "Verified",
+    "premium": "Premium Verified",
+    "unverified": "Unverified",
+    "employees": "employees",
+    "factory": "sqm factory",
+    "moq": "MOQ",
+    "est": "Est.",
+    "visitWebsite": "Visit website"
+  },
+  "search": {
+    "title": "Search Factories",
+    "placeholder": "Search products, factories, or regions...",
+    "results": "results",
+    "noResults": "No results found. Try a different search term.",
+    "filters": "Filters",
+    "allCategories": "All Categories",
+    "allRegions": "All Regions",
+    "sortBy": "Sort by",
+    "relevance": "Relevance",
+    "popular": "Most Popular",
+    "newest": "Newest"
+  },
+  "submit": {
+    "title": "List Your Factory",
+    "subtitle": "Submit your factory information to be listed on ChinaProHub. It's free.",
+    "comingSoon": "Factory submission form coming soon. Contact us at",
+    "toGetListed": "to get listed."
+  },
+  "about": {
+    "title": "About ChinaProHub",
+    "mission": "Our Mission",
+    "missionText": "To bridge the information gap between international buyers and Chinese manufacturers. We believe that finding the right factory should be transparent, efficient, and accessible to businesses of all sizes.",
+    "principles": "Listing Principles",
+    "principle1": "Free listing — no pay-to-rank, no paid certifications",
+    "principle2": "Verified information — we review all submitted data",
+    "principle3": "Direct contact — buyer connects directly with the factory",
+    "principle4": "Multi-language — serving buyers worldwide",
+    "contactUs": "Contact Us",
+    "contactText": "For inquiries, partnerships, or data corrections, email us at"
+  },
+  "footer": {
+    "description": "Your gateway to verified Chinese suppliers. Browse by product category, industrial cluster, or region.",
+    "browse": "Browse",
+    "about": "About",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "contactLabel": "Contact",
+    "contactDesc": "For inquiries, partnerships, or data corrections:",
+    "copyright": "All rights reserved."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ar": "العربية",
+    "ru": "Русский",
+    "fr": "Français"
+  }
+}

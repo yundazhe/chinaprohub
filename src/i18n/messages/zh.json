@@ -1,0 +1,132 @@
+{
+  "common": {
+    "siteName": "ChinaProHub",
+    "tagline": "中国工厂采购平台",
+    "search": "搜索",
+    "searchPlaceholder": "搜索产品、工厂或地区...",
+    "viewAll": "查看全部",
+    "viewAllCategories": "查看所有分类",
+    "viewAllClusters": "查看所有产业集群",
+    "viewAllEnterprises": "查看所有企业",
+    "back": "返回",
+    "loading": "加载中...",
+    "noResults": "未找到结果。",
+    "contact": "联系",
+    "email": "邮箱"
+  },
+  "nav": {
+    "categories": "产品分类",
+    "regions": "地区",
+    "enterprises": "企业",
+    "about": "关于我们",
+    "search": "搜索",
+    "listFactory": "入驻工厂"
+  },
+  "home": {
+    "heroTitle1": "中国制造，",
+    "heroTitle2": "源头直采。",
+    "heroSubtitle": "中国认证工厂目录。按产品类别、产业集群或地区浏览。直接与工厂联系比较。",
+    "popularLabel": "热门：",
+    "statsCategories": "产品分类",
+    "statsClusters": "产业集群",
+    "statsEnterprises": "入驻企业",
+    "statsProvinces": "覆盖省份",
+    "categoriesTitle": "按分类浏览",
+    "categoriesSubtitle": "按产品类型查找工厂",
+    "clustersTitle": "重点产业集群",
+    "clustersSubtitle": "中国制造的精华 — 按地区分布",
+    "featuredTitle": "推荐企业",
+    "featuredSubtitle": "经过认证的工厂，满足您的采购需求",
+    "ctaTitle": "您是工厂负责人吗？",
+    "ctaSubtitle": "在ChinaProHub免费入驻您的工厂。触达正在寻找中国供应商的国际买家。",
+    "ctaButton": "免费入驻工厂",
+    "browseFactories": "浏览工厂"
+  },
+  "categories": {
+    "title": "产品分类",
+    "subtitle": "按产品类型浏览工厂。从五金电子到纺织食品 — 找到适合您的供应商。",
+    "allCategories": "所有分类",
+    "factoriesListed": "家工厂已入驻",
+    "noFactories": "暂无工厂入驻",
+    "noFactoriesSub": "该分类的工厂正在添加中，请稍后再来。"
+  },
+  "regions": {
+    "title": "产业集群与地区",
+    "subtitle": "发现中国制造的精华。每个产业集群专注于特定产品，拥有集中的供应链。",
+    "allRegions": "所有地区",
+    "factoriesInRegion": "家工厂在该地区",
+    "noFactories": "暂无工厂入驻",
+    "noFactoriesSub": "该地区的工厂正在添加中，请稍后再来。"
+  },
+  "enterprises": {
+    "title": "企业目录",
+    "subtitle": "浏览认证的中国工厂。每个列表包含联系信息、认证和产品详情。",
+    "filterBy": "筛选：",
+    "noEnterprises": "暂无企业入驻。",
+    "allEnterprises": "所有企业",
+    "contactFactory": "联系工厂",
+    "certifications": "认证",
+    "exportMarkets": "出口市场",
+    "supportsOem": "支持OEM/ODM",
+    "locationCategory": "位置与分类",
+    "moreFactories": "更多工厂在",
+    "verified": "已认证",
+    "premium": "高级认证",
+    "unverified": "未认证",
+    "employees": "员工",
+    "factory": "平方米厂房",
+    "moq": "起订量",
+    "est": "成立于",
+    "visitWebsite": "访问网站"
+  },
+  "search": {
+    "title": "搜索工厂",
+    "placeholder": "搜索产品、工厂或地区...",
+    "results": "条结果",
+    "noResults": "未找到结果。请尝试其他关键词。",
+    "filters": "筛选",
+    "allCategories": "所有分类",
+    "allRegions": "所有地区",
+    "sortBy": "排序",
+    "relevance": "相关性",
+    "popular": "最受欢迎",
+    "newest": "最新"
+  },
+  "submit": {
+    "title": "入驻工厂",
+    "subtitle": "提交您的工厂信息以在ChinaProHub上展示。完全免费。",
+    "comingSoon": "工厂提交表单即将上线。请联系我们：",
+    "toGetListed": "以获取入驻。"
+  },
+  "about": {
+    "title": "关于ChinaProHub",
+    "mission": "我们的使命",
+    "missionText": "弥合国际买家与中国制造商之间的信息鸿沟。我们相信，找到合适的工厂应该是透明、高效且对各种规模的企业都开放。",
+    "principles": "入驻原则",
+    "principle1": "免费入驻 — 不付费排名，不付费认证",
+    "principle2": "信息核实 — 我们审核所有提交的数据",
+    "principle3": "直接联系 — 买家与工厂直接对接",
+    "principle4": "多语言 — 服务全球买家",
+    "contactUs": "联系我们",
+    "contactText": "咨询、合作或数据更正，请发邮件至"
+  },
+  "footer": {
+    "description": "您通往认证中国供应商的门户。按产品类别、产业集群或地区浏览。",
+    "browse": "浏览",
+    "about": "关于",
+    "aboutUs": "关于我们",
+    "contact": "联系",
+    "contactLabel": "联系方式",
+    "contactDesc": "咨询、合作或数据更正：",
+    "copyright": "版权所有。"
+  },
+  "language": {
+    "label": "语言",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ar": "العربية",
+    "ru": "Русский",
+    "fr": "Français"
+  }
+}
