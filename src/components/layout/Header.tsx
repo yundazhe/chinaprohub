@@ -3,6 +3,7 @@ import { Search, Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/categories", label: "Categories" },
+  { href: "/regions", label: "Regions" },
   { href: "/enterprises", label: "Enterprises" },
   { href: "/about", label: "About" },
 ];
