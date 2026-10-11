@@ -51,6 +51,14 @@ export function extractValues(fd: FormData): {
   return { values, locks, id };
 }
 
+// 空串 → null：integer 列（sort_order/established_year 等）收到 "" 会报
+// `invalid input syntax for type integer: ""`，留空字段必须以 null 下发。
+export function normalizeEmpty(values: Record<string, string>): Record<string, string | null> {
+  const out: Record<string, string | null> = {};
+  for (const [k, v] of Object.entries(values)) out[k] = v === "" ? null : v;
+  return out;
+}
+
 export function makeSaveHandler(def: EntityDef) {
   return async (fd: FormData): Promise<{ ok?: boolean; err?: string }> => {
     await requireAdmin();
@@ -62,7 +70,7 @@ export function makeSaveHandler(def: EntityDef) {
     if (!old && id) return { err: "记录不存在" };
     const mergedLocks = mergeLocks((old?.translation_locks as string[]) ?? [], locks);
     // 应用 baseFields 的 serialize（如逗号分隔 → 数组）；未定义 serialize 的列保持原始字符串。
-    const patch: Record<string, unknown> = { ...values, translation_locks: mergedLocks };
+    const patch: Record<string, unknown> = { ...normalizeEmpty(values), translation_locks: mergedLocks };
     for (const f of def.baseFields) {
       if (!f.serialize) continue;
       if (f.kind === "checkbox") {

@@ -1,5 +1,21 @@
 import { describe, it, expect } from "vitest";
-import { mergeLocks, extractValues } from "./crud-factory";
+import { mergeLocks, extractValues, normalizeEmpty } from "./crud-factory";
+
+describe("normalizeEmpty", () => {
+  it("turns empty strings into null so integer columns accept blanks", () => {
+    expect(normalizeEmpty({ name_zh: "高压电", sort_order: "", icon: "" })).toEqual({
+      name_zh: "高压电",
+      sort_order: null,
+      icon: null,
+    });
+  });
+  it("keeps non-empty values untouched", () => {
+    expect(normalizeEmpty({ established_year: "2005", moq_text: "500pcs" })).toEqual({
+      established_year: "2005",
+      moq_text: "500pcs",
+    });
+  });
+});
 
 describe("mergeLocks", () => {
   it("adds new, keeps old, unique", () => {
