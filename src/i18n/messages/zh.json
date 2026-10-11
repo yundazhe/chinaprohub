@@ -87,10 +87,21 @@
     "filters": "筛选",
     "allCategories": "所有分类",
     "allRegions": "所有地区",
+    "allCertifications": "所有认证",
     "sortBy": "排序",
     "relevance": "相关性",
     "popular": "最受欢迎",
-    "newest": "最新"
+    "newest": "最新",
+    "loadMore": "加载更多",
+    "showing": "显示",
+    "of": "共",
+    "processingTime": "处理时间",
+    "ms": "毫秒",
+    "searchButton": "搜索",
+    "clearFilters": "清除筛选",
+    "certifications": "认证",
+    "category": "分类",
+    "region": "地区"
   },
   "submit": {
     "title": "入驻工厂",

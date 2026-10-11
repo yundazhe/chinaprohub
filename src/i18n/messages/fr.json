@@ -87,10 +87,21 @@
     "filters": "Filtres",
     "allCategories": "Toutes les catégories",
     "allRegions": "Toutes les régions",
+    "allCertifications": "Toutes les certifications",
     "sortBy": "Trier par",
     "relevance": "Pertinence",
     "popular": "Les plus populaires",
-    "newest": "Les plus récents"
+    "newest": "Les plus récents",
+    "loadMore": "Charger plus",
+    "showing": "Affichage",
+    "of": "sur",
+    "processingTime": "Temps de traitement",
+    "ms": "ms",
+    "searchButton": "Rechercher",
+    "clearFilters": "Effacer les filtres",
+    "certifications": "Certifications",
+    "category": "Catégorie",
+    "region": "Région"
   },
   "submit": {
     "title": "Inscrire votre usine",

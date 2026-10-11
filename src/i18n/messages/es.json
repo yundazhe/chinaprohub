@@ -87,10 +87,21 @@
     "filters": "Filtros",
     "allCategories": "Todas las categorías",
     "allRegions": "Todas las regiones",
+    "allCertifications": "Todas las certificaciones",
     "sortBy": "Ordenar por",
     "relevance": "Relevancia",
     "popular": "Más popular",
-    "newest": "Más reciente"
+    "newest": "Más reciente",
+    "loadMore": "Cargar más",
+    "showing": "Mostrando",
+    "of": "de",
+    "processingTime": "Tiempo de procesamiento",
+    "ms": "ms",
+    "searchButton": "Buscar",
+    "clearFilters": "Limpiar filtros",
+    "certifications": "Certificaciones",
+    "category": "Categoría",
+    "region": "Región"
   },
   "submit": {
     "title": "Registrar su fábrica",

@@ -87,10 +87,21 @@
     "filters": "التصفية",
     "allCategories": "جميع الفئات",
     "allRegions": "جميع المناطق",
+    "allCertifications": "جميع الشهادات",
     "sortBy": "ترتيب حسب",
     "relevance": "الصلة",
     "popular": "الأكثر شعبية",
-    "newest": "الأحدث"
+    "newest": "الأحدث",
+    "loadMore": "تحميل المزيد",
+    "showing": "عرض",
+    "of": "من",
+    "processingTime": "وقت المعالجة",
+    "ms": "مللي ثانية",
+    "searchButton": "بحث",
+    "clearFilters": "مسح التصفية",
+    "certifications": "الشهادات",
+    "category": "الفئة",
+    "region": "المنطقة"
   },
   "submit": {
     "title": "سجّل مصنعك",

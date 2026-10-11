@@ -87,10 +87,21 @@
     "filters": "Filters",
     "allCategories": "All Categories",
     "allRegions": "All Regions",
+    "allCertifications": "All Certifications",
     "sortBy": "Sort by",
     "relevance": "Relevance",
     "popular": "Most Popular",
-    "newest": "Newest"
+    "newest": "Newest",
+    "loadMore": "Load More",
+    "showing": "Showing",
+    "of": "of",
+    "processingTime": "Processing time",
+    "ms": "ms",
+    "searchButton": "Search",
+    "clearFilters": "Clear Filters",
+    "certifications": "Certifications",
+    "category": "Category",
+    "region": "Region"
   },
   "submit": {
     "title": "List Your Factory",

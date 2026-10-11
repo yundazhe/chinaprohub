@@ -87,10 +87,21 @@
     "filters": "Фильтры",
     "allCategories": "Все категории",
     "allRegions": "Все регионы",
+    "allCertifications": "Все сертификаты",
     "sortBy": "Сортировать по",
     "relevance": "Релевантность",
     "popular": "Самые популярные",
-    "newest": "Самые новые"
+    "newest": "Самые новые",
+    "loadMore": "Загрузить ещё",
+    "showing": "Показано",
+    "of": "из",
+    "processingTime": "Время обработки",
+    "ms": "мс",
+    "searchButton": "Искать",
+    "clearFilters": "Сбросить фильтры",
+    "certifications": "Сертификаты",
+    "category": "Категория",
+    "region": "Регион"
   },
   "submit": {
     "title": "Разместить вашу фабрику",
