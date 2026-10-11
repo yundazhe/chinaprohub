@@ -21,7 +21,10 @@
     "enterprises": "企业",
     "about": "关于我们",
     "search": "搜索",
-    "listFactory": "入驻工厂"
+    "listFactory": "入驻工厂",
+    "home": "首页",
+    "howItWorks": "运作流程",
+    "services": "服务"
   },
   "home": {
     "heroTitle1": "中国制造，",
@@ -143,7 +146,9 @@
     "contact": "联系",
     "contactLabel": "联系方式",
     "contactDesc": "咨询、合作或数据更正：",
-    "copyright": "版权所有。"
+    "copyright": "版权所有。",
+    "howItWorks": "运作流程",
+    "services": "服务"
   },
   "language": {
     "label": "语言",
@@ -153,5 +158,39 @@
     "ar": "العربية",
     "ru": "Русский",
     "fr": "Français"
+  },
+  "howItWorks": {
+    "title": "运作流程",
+    "subtitle": "从搜索到下单——海外买家直连中国工厂的完整路径。",
+    "step1Title": "浏览发现",
+    "step1Body": "按产品类别或产业带查找中国工厂，支持认证、OEM 等条件筛选。",
+    "step2Title": "对比联系",
+    "step2Body": "每个工厂主页都提供直联邮箱和 WhatsApp，直接与厂家沟通——无中间商、无隐藏费用。",
+    "step3Title": "验证下单",
+    "step3Body": "索取样品、安排验厂或第三方审核，确认条款后放心下单。",
+    "factoriesTitle": "您是中国工厂吗？",
+    "factoriesBody": "免费入驻，让每天搜索您产品的海外买家主动找到您。",
+    "browseCta": "浏览分类",
+    "searchCta": "搜索工厂",
+    "factoryCta": "工厂入驻"
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "不只是目录——为海外买家提供中国采购的落地支持。",
+    "matchTitle": "采购撮合",
+    "matchBody": "告诉我们您的产品、预算和起订量，我们从认证产业带中筛选合适的工厂。",
+    "auditTitle": "验厂陪同",
+    "auditBody": "陪同验厂或独立核查：产能、质量体系、营业执照与背景调查。",
+    "interpTitle": "口译翻译",
+    "interpBody": "会议、电话与谈判的普通话口译，以及商务文件翻译。",
+    "qcTitle": "质量检验",
+    "qcBody": "中期与出货前验货，附照片报告，把缺陷挡在出厂之前。",
+    "logTitle": "物流运输",
+    "logBody": "海运、铁路、空运协调，出口单证与多供应商集货。",
+    "afterTitle": "售后支持",
+    "afterBody": "订单完成后协助索赔、换货，保障您的权益。",
+    "ctaTitle": "有采购需求？",
+    "ctaBody": "把需求发邮件给我们，一个工作日内回复。",
+    "ctaButton": "联系我们"
   }
 }

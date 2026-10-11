@@ -10,10 +10,13 @@ export default function Footer() {
 
   const footerLinks = {
     browse: [
+      { label: tn("home"), href: "/" as const },
       { label: tn("categories"), href: "/categories" as const },
       { label: tn("enterprises"), href: "/enterprises" as const },
     ],
     about: [
+      { label: tn("howItWorks"), href: "/how-it-works" as const },
+      { label: tn("services"), href: "/services" as const },
       { label: t("aboutUs"), href: "/about" as const },
       { label: t("contact"), href: "/about#contact" as const },
     ],

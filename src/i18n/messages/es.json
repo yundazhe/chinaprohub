@@ -21,7 +21,10 @@
     "enterprises": "Empresas",
     "about": "Acerca de",
     "search": "Buscar",
-    "listFactory": "Registrar su fábrica"
+    "listFactory": "Registrar su fábrica",
+    "home": "Inicio",
+    "howItWorks": "Cómo Funciona",
+    "services": "Servicios"
   },
   "home": {
     "heroTitle1": "Hecho en China,",
@@ -143,7 +146,9 @@
     "contact": "Contacto",
     "contactLabel": "Contacto",
     "contactDesc": "Para consultas, asociaciones o correcciones de datos:",
-    "copyright": "Todos los derechos reservados."
+    "copyright": "Todos los derechos reservados.",
+    "howItWorks": "Cómo Funciona",
+    "services": "Servicios"
   },
   "language": {
     "label": "Idioma",
@@ -153,5 +158,39 @@
     "ar": "العربية",
     "ru": "Русский",
     "fr": "Français"
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "subtitle": "De la búsqueda al envío: compre directamente a fábricas chinas.",
+    "step1Title": "Explore y Descubra",
+    "step1Body": "Busque fábricas chinas por categoría de producto o clúster industrial. Filtre por certificaciones, OEM y más.",
+    "step2Title": "Compare y Contacte",
+    "step2Body": "Cada ficha incluye correo y WhatsApp directos. Hable con la fábrica sin intermediarios ni comisiones ocultas.",
+    "step3Title": "Verifique y Pida",
+    "step3Body": "Solicite muestras, organice una visita o auditoría y haga su pedido con confianza.",
+    "factoriesTitle": "¿Tiene una fábrica en China?",
+    "factoriesBody": "Publique su fábrica gratis y llegue a compradores que buscan sus productos cada día.",
+    "browseCta": "Ver Categorías",
+    "searchCta": "Buscar Fábricas",
+    "factoryCta": "Registrar Fábrica"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Más allá del directorio: apoyo práctico para compradores en China.",
+    "matchTitle": "Intermediación de Compras",
+    "matchBody": "Díganos producto, presupuesto y MOQ: seleccionamos fábricas adecuadas de clústeres verificados.",
+    "auditTitle": "Auditoría y Visitas a Fábrica",
+    "auditBody": "Le acompañamos o verificamos con independencia: capacidad, calidad, licencia y antecedentes.",
+    "interpTitle": "Interpretación y Traducción",
+    "interpBody": "Intérpretes de mandarín para reuniones y negociaciones, más traducción de documentos.",
+    "qcTitle": "Inspección de Calidad",
+    "qcBody": "Inspecciones durante la producción y antes del envío con informes fotográficos.",
+    "logTitle": "Logística y Envío",
+    "logBody": "Coordinación de transporte marítimo, ferroviario y aéreo, documentación y consolidación.",
+    "afterTitle": "Soporte Postventa",
+    "afterBody": "Le ayudamos con reclamaciones y reposiciones después del pedido.",
+    "ctaTitle": "¿Tiene un proyecto de compras?",
+    "ctaBody": "Envíenos sus requisitos por correo y responderemos en un día hábil.",
+    "ctaButton": "Contáctenos"
   }
 }

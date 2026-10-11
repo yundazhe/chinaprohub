@@ -21,7 +21,10 @@
     "enterprises": "Enterprises",
     "about": "About",
     "search": "Search",
-    "listFactory": "List Your Factory"
+    "listFactory": "List Your Factory",
+    "home": "Home",
+    "howItWorks": "How It Works",
+    "services": "Services"
   },
   "home": {
     "heroTitle1": "Made in China,",
@@ -143,7 +146,9 @@
     "contact": "Contact",
     "contactLabel": "Contact",
     "contactDesc": "For inquiries, partnerships, or data corrections:",
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "howItWorks": "How It Works",
+    "services": "Services"
   },
   "language": {
     "label": "Language",
@@ -153,5 +158,39 @@
     "ar": "العربية",
     "ru": "Русский",
     "fr": "Français"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "From search to shipment — the path to sourcing directly from Chinese factories.",
+    "step1Title": "Browse & Discover",
+    "step1Body": "Explore Chinese factories by product category or industrial cluster. Filter by certifications, OEM support and more.",
+    "step2Title": "Compare & Contact",
+    "step2Body": "Every factory profile includes a direct email and WhatsApp. Reach the factory yourself — no middleman, no hidden fees.",
+    "step3Title": "Verify & Order",
+    "step3Body": "Request samples, arrange a factory visit or third-party audit, agree on terms, then place your order with confidence.",
+    "factoriesTitle": "Are you a Chinese factory?",
+    "factoriesBody": "List your factory for free and reach international buyers searching for your products every day.",
+    "browseCta": "Browse Categories",
+    "searchCta": "Search Factories",
+    "factoryCta": "List Your Factory"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Beyond the directory — hands-on support for international buyers sourcing in China.",
+    "matchTitle": "Sourcing Matchmaking",
+    "matchBody": "Tell us your product, budget and MOQ — we shortlist suitable factories from verified industrial clusters.",
+    "auditTitle": "Factory Audit & Visits",
+    "auditBody": "We accompany you on factory visits or run independent checks: capacity, quality system, business license and background.",
+    "interpTitle": "Interpretation & Translation",
+    "interpBody": "Mandarin interpreters for meetings, calls and negotiations, plus business document translation.",
+    "qcTitle": "Quality Inspection",
+    "qcBody": "During-production and pre-shipment inspections with photo reports, so defects are caught before goods leave the factory.",
+    "logTitle": "Logistics & Shipping",
+    "logBody": "Coordination of sea, rail and air freight, export paperwork and consolidation from multiple suppliers.",
+    "afterTitle": "After-Sales Support",
+    "afterBody": "We help you raise claims, arrange replacements and protect your interests after the order is placed.",
+    "ctaTitle": "Have a sourcing project?",
+    "ctaBody": "Email us your requirements and we will reply within one business day.",
+    "ctaButton": "Contact Us"
   }
 }

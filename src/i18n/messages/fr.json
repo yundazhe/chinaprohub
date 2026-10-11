@@ -21,7 +21,10 @@
     "enterprises": "Entreprises",
     "about": "À propos",
     "search": "Rechercher",
-    "listFactory": "Inscrire votre usine"
+    "listFactory": "Inscrire votre usine",
+    "home": "Accueil",
+    "howItWorks": "Comment Ça Marche",
+    "services": "Services"
   },
   "home": {
     "heroTitle1": "Fabriqué en Chine,",
@@ -143,7 +146,9 @@
     "contact": "Contact",
     "contactLabel": "Contact",
     "contactDesc": "Pour les demandes, partenariats ou corrections de données :",
-    "copyright": "Tous droits réservés."
+    "copyright": "Tous droits réservés.",
+    "howItWorks": "Comment Ça Marche",
+    "services": "Services"
   },
   "language": {
     "label": "Langue",
@@ -153,5 +158,39 @@
     "ar": "العربية",
     "ru": "Русский",
     "fr": "Français"
+  },
+  "howItWorks": {
+    "title": "Comment Ça Marche",
+    "subtitle": "De la recherche à l'expédition — approvisionnez-vous directement auprès des usines chinoises.",
+    "step1Title": "Parcourir et Découvrir",
+    "step1Body": "Explorez les usines chinoises par catégorie de produit ou bassin industriel, avec filtres par certifications et OEM.",
+    "step2Title": "Comparer et Contacter",
+    "step2Body": "Chaque fiche inclut un e-mail et WhatsApp directs. Contactez l'usine sans intermédiaire ni frais cachés.",
+    "step3Title": "Vérifier et Commander",
+    "step3Body": "Demandez des échantillons, organisez une visite ou un audit, puis commandez en confiance.",
+    "factoriesTitle": "Vous êtes une usine chinoise ?",
+    "factoriesBody": "Publiez votre usine gratuitement et touchez chaque jour des acheteurs internationaux.",
+    "browseCta": "Voir les Catégories",
+    "searchCta": "Rechercher des Usines",
+    "factoryCta": "Inscrire Votre Usine"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Au-delà de l'annuaire — un accompagnement concret pour les acheteurs en Chine.",
+    "matchTitle": "Mise en Relation Sourcing",
+    "matchBody": "Indiquez produit, budget et quantité minimale : nous présélectionnons les usines adaptées.",
+    "auditTitle": "Audit et Visites d'Usine",
+    "auditBody": "Nous vous accompagnons ou vérifions de façon indépendante : capacité, qualité, licence et antécédents.",
+    "interpTitle": "Interprétariat et Traduction",
+    "interpBody": "Interprètes en mandarin pour réunions et négociations, plus traduction de documents.",
+    "qcTitle": "Contrôle Qualité",
+    "qcBody": "Inspections en production et avant expédition avec rapports photo.",
+    "logTitle": "Logistique et Transport",
+    "logBody": "Coordination maritime, ferroviaire et aérienne, documents d'exportation et groupage.",
+    "afterTitle": "Service Après-Vente",
+    "afterBody": "Nous vous aidons pour les réclamations et remplacements après commande.",
+    "ctaTitle": "Un projet d'approvisionnement ?",
+    "ctaBody": "Envoyez-nous vos exigences par e-mail, réponse sous un jour ouvré.",
+    "ctaButton": "Contactez-Nous"
   }
 }

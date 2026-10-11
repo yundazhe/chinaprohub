@@ -10,9 +10,12 @@ export default function Header() {
   const tc = useTranslations("common");
 
   const navLinks = [
+    { href: "/" as const, label: t("home") },
     { href: "/categories" as const, label: t("categories") },
     { href: "/regions" as const, label: t("regions") },
     { href: "/enterprises" as const, label: t("enterprises") },
+    { href: "/how-it-works" as const, label: t("howItWorks") },
+    { href: "/services" as const, label: t("services") },
     { href: "/about" as const, label: t("about") },
   ];
 
