@@ -5,6 +5,7 @@ import CategoryCard from "@/components/ui/CategoryCard";
 import RegionCard from "@/components/ui/RegionCard";
 import EnterpriseCard from "@/components/ui/EnterpriseCard";
 import StatsCard from "@/components/ui/StatsCard";
+import JsonLd from "@/components/seo/JsonLd";
 import { getTranslations } from "next-intl/server";
 
 export const revalidate = 3600;
@@ -23,8 +24,22 @@ export default async function HomePage() {
   const totalRegions = regions.length;
   const totalEnterprises = enterprises.length;
 
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ChinaProHub",
+    url: "https://chinaprohub.com",
+    description: "Directory of verified Chinese suppliers",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://chinaprohub.com/{locale}/search?q={query}",
+      "query-input": "required name=query",
+    },
+  };
+
   return (
     <div>
+      <JsonLd data={websiteData} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-slate-900 py-16 sm:py-24">
         <div className="container-custom text-center">

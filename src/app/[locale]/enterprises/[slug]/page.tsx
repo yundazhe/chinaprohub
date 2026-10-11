@@ -16,6 +16,7 @@ import {
 import { dataService } from "@/lib/data";
 import CertificationBadge from "@/components/ui/CertificationBadge";
 import EnterpriseCard from "@/components/ui/EnterpriseCard";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const revalidate = 3600;
 
@@ -62,8 +63,26 @@ export default async function EnterpriseDetailPage({ params }: Props) {
     premium: "bg-amber-100 text-amber-700",
   }[enterprise.verification_status];
 
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: enterprise.name_en,
+    alternateName: enterprise.name_zh,
+    description: enterprise.description_en,
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: region?.name_en,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: enterprise.contact_email,
+      telephone: enterprise.contact_whatsapp,
+    },
+  };
+
   return (
     <div className="py-12 sm:py-16">
+      <JsonLd data={organizationData} />
       <div className="container-custom">
         {/* Breadcrumb */}
         <nav className="mb-6">

@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { ArrowLeft, Building2 } from "lucide-react";
 import { dataService } from "@/lib/data";
 import EnterpriseCard from "@/components/ui/EnterpriseCard";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const revalidate = 3600;
 
@@ -26,8 +27,21 @@ export default async function CategoryDetailPage({ params }: Props) {
 
   const enterprises = await dataService.getEnterprisesByCategory(params.slug);
 
+  const itemListData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: category.name_en,
+    itemListElement: enterprises.map((enterprise, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: enterprise.name_en,
+      url: `https://chinaprohub.com/enterprises/${enterprise.slug}`,
+    })),
+  };
+
   return (
     <div className="py-12 sm:py-16">
+      <JsonLd data={itemListData} />
       <div className="container-custom">
         {/* Breadcrumb */}
         <nav className="mb-6">
