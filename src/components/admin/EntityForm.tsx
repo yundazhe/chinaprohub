@@ -67,6 +67,7 @@ export default function EntityForm({
           type={f.type}
           textarea={f.textarea}
           required={f.required}
+          options={f.options}
           defaultValue={valueOf(f.col)}
         />
       ))}

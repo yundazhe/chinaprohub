@@ -11,6 +11,8 @@ export type FieldDef = {
   textarea?: boolean;
   required?: boolean;
   type?: string;
+  // 提供时表单渲染下拉选择（如 regions.type 枚举）。
+  options?: string[];
   // 提交时对该列原始字符串值做转换（如逗号分隔标签 → 数组）。
   serialize?: (raw: string) => unknown;
 };

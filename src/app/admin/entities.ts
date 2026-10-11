@@ -22,9 +22,14 @@ export const REGIONS: EntityDef = {
   baseFields: [
     { col: "name_zh", label: "中文名称", required: true },
     { col: "description_zh", label: "中文描述", textarea: true },
-    { col: "province_zh", label: "所在省份" },
     {
-      col: "specializations",
+      col: "type",
+      label: "类型（province/city/cluster）",
+      required: true,
+      options: ["province", "city", "cluster"],
+    },
+    {
+      col: "core_products",
       label: "特色产品（逗号分隔）",
       // 表单提交逗号文本 → 存 JSONB 数组（makeSaveHandler 对表单内出现的列应用 serialize）
       serialize: (raw) =>
@@ -43,12 +48,13 @@ export const REGIONS: EntityDef = {
 export function formDef(def: EntityDef): EntityDef {
   return {
     ...def,
-    baseFields: def.baseFields.map(({ col, label, textarea, required, type }) => ({
+    baseFields: def.baseFields.map(({ col, label, textarea, required, type, options }) => ({
       col,
       label,
       textarea,
       required,
       type,
+      options,
     })),
   };
 }

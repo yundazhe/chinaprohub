@@ -5,6 +5,7 @@ export function Field({
   textarea,
   required,
   type = "text",
+  options,
 }: {
   label: string;
   name: string;
@@ -12,6 +13,7 @@ export function Field({
   textarea?: boolean;
   required?: boolean;
   type?: string;
+  options?: string[];
 }) {
   const cls = "w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary-500";
   return (
@@ -20,7 +22,16 @@ export function Field({
         {label}
         {required && <em className="not-italic text-red-500"> *</em>}
       </span>
-      {textarea ? (
+      {options ? (
+        <select name={name} defaultValue={defaultValue || undefined} className={cls} required={required}>
+          {!required && <option value="">请选择</option>}
+          {options.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+      ) : textarea ? (
         <textarea name={name} defaultValue={defaultValue} rows={3} className={cls} required={required} />
       ) : (
         <input name={name} type={type} defaultValue={defaultValue} className={cls} required={required} />
